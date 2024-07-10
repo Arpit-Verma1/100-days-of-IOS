@@ -13,6 +13,8 @@ Today, I explored how to implement navigation in an iOS app using `NavigationLin
 
 ### Example Code
 Here is a simple example demonstrating the use of `NavigationView` and `NavigationLink`:
+![image](https://github.com/arpitvermaofficial/100-days-of-IOS/assets/99536186/b178fc14-f057-454a-9d71-d737cdeac727)
+
 
 ```swift
 import SwiftUI
@@ -53,5 +55,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-![image](https://github.com/arpitvermaofficial/100-days-of-IOS/assets/99536186/04856357-9b6c-407c-bbef-94d532e98e22)
+
 
