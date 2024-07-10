@@ -53,3 +53,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+![image](https://github.com/arpitvermaofficial/100-days-of-IOS/assets/99536186/04856357-9b6c-407c-bbef-94d532e98e22)
+
