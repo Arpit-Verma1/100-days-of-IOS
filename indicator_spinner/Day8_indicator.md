@@ -9,8 +9,8 @@ Welcome to my 100 Days of iOS Development journey! Each day, I will be documenti
 - How to use `ActivityIndicatorView` to show loading indicators in SwiftUI.
 - Customizing the appearance of spinners with different styles and colors.
 - Managing the visibility of spinners using state variables.
+![Screenshot 2024-07-17 132640](https://github.com/user-attachments/assets/4331ae7f-dfa4-4473-8a50-b5d9c3e54466)
 
-![alt text](<Screenshot 2024-07-17 at 1.42.42 PM.png>)
 ## Example Code
 
 Here's an example demonstrating the use of different types of loading indicators:
