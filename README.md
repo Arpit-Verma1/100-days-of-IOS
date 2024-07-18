@@ -1,32 +1,44 @@
->Interface -> Storyboard
-```
-Storyboard is part of interface builder which is written in XML
-The Interface builder editor helps to design full UI without writing any code. Simply drag and depo button , texfields.
-```
+# 100 Days of iOS
 
-### Short Summary
-**SwiftUI (SFFTUI):** A modern, declarative framework for building cross-platform Apple app interfaces quickly, with built-in state management and real-time previews.
+Welcome to my 100 Days of iOS repository! 🚀 Here, I document my journey as I explore iOS development using Swift and SwiftUI. This repository is a collection of my daily progress, where I aim to learn and implement new features, concepts, and libraries in iOS development.
 
-**Storyboard:** A visual, drag-and-drop editor for laying out UIKit-based interfaces with navigation flow visualization, better suited for established workflows and legacy projects.
+## About Me
 
->Change storyboard to SwiftUI
-```
-1)deleting main.storyboard
-2)change storyboard name main to empty in info.plist
-3)type main in runner and look for UIkit storyboard base name chnage its value to empty
-4) configure sceneDelegate file so we work without storyboards
+I'm Arpit Verma, passionate about mobile app development and currently diving deep into iOS with SwiftUI. My journey started with a curiosity for creating impactful mobile applications that solve real-world problems. Despite challenges, I'm dedicated to expanding my skills and sharing my learnings with the community.
 
-```
->SceneDelegate
-```
-It introduced in ios 13 focuses on managing the lifecycle and configuaration of multiple instances of UI within our app
-```
->Window
-```
-rectangualar are where host represent app's content and having rootviewController to manages the content within window
-```
-# What is a Cocoa Touch Class?
+## Goal
 
-A Cocoa Touch class is a custom class file created in Xcode for iOS, iPadOS, or tvOS app development. It usually inherits from a base class in the Cocoa Touch framework, such as `UIViewController`, `UIView`, or `UITableViewCell`. Developers use Cocoa Touch classes to create custom views, controllers, or models that integrate seamlessly with Apple's user interface and event-handling systems.
+My goal with this 100-day challenge is to:
+- Master SwiftUI and iOS development techniques.
+- Build a portfolio of diverse iOS apps.
+- Share insights and code examples to inspire and educate others in the developer community.
 
-cmd+shift+A to switch bw dark and light mode emulator
+## Progress
+
+- **Already Viewed:** 411 times
+- **Cloned:** 18 times
+
+## Follow Me
+
+Follow my journey on LinkedIn: [Arpit Verma](https://www.linkedin.com/in/arpit-verma1/)
+
+## Star the Repo
+
+If you find my work interesting or helpful, please consider starring this repository!
+
+## Structure of the Repository
+
+### New Features Folder
+
+In this repository, the `NewFeatures` folder contains daily updates where each day's progress is documented. Each folder includes:
+- Code examples
+- Learnings
+- Challenges overcome
+
+Feel free to explore, provide feedback, or suggest improvements. Your support means a lot to me!
+
+---
+
+Let's connect, learn, and grow together! 🌟
+
+#100DaysOfiOS #SwiftUI #MobileAppDevelopment #iOSDevelopment
