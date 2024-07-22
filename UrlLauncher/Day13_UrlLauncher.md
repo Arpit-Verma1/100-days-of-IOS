@@ -9,7 +9,7 @@ On Day 13, I learned how to open web links in SwiftUI using the `Link` view. Thi
 - Setting up the `Link` view to navigate to a specified URL when tapped.
 
 ## Example Code
-
+![alt text](<Screenshot 2024-07-22 at 11.56.03 PM.png>)
 Here's an example demonstrating how to open a web link using SwiftUI:
 
 ```swift
