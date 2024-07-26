@@ -23,7 +23,7 @@ struct ContentView: View {
             })
             BottomCard(cardShown: $showCard, cardDismissal: $cardDismissable ){
                 CardContent()
-            }
+            }.animation(.default)
         }
     }
 }
@@ -60,7 +60,15 @@ struct BottomCard<Content:View>:View{
                 Spacer()
                 VStack(spacing:0){
                     content
-                }.background(Color.white)
+                    Button(action: {
+                        cardShown.toggle()
+                    }, label: {
+                        Text("Dismiss").foregroundColor(.white).padding()
+                            .background(Color.pink)
+                            .cornerRadius(10)
+                    })
+                }.background(.white).offset(y:cardShown && cardDismissal ? 0 : 300)
+                    .animation(.default.delay(0.2))
             }
         }.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
     }
