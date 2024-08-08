@@ -40,18 +40,19 @@ extension CoinRowView {
                 .bold()
                 .foregroundColor(Color.theme.accent)
             Text((coin.currentHoldings ?? 0).asNumberString())
-                .foregroundColor(Color.theme.secondaryText)
+               
         }
-        .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
+        .foregroundColor(Color.theme.accent)
     }
     
     private var rightColumn : some View {
-        VStack {
+        VStack(alignment: .trailing) {
+        
             Text(coin.currentPrice.asCurrencyWithDecials())
                 .bold()
                 .foregroundColor(Color.theme.accent)
-            Text((coin.marketCap?.asCurrencyWithDecials())!)
-                .foregroundColor(Color.theme.secondaryText)
+            Text(coin.priceChangePercentage24H?.asPercentString() ?? "")
+                .foregroundColor(coin.priceChangePercentage24H ?? 0 >= 0 ? Color.theme.green : Color.theme.red)
         }
         .padding(.trailing)
     }
@@ -64,12 +65,12 @@ extension CoinRowView {
                 .frame(width: 40)
             Circle()
                 .frame(width: 30, height: 30)
-                .foregroundColor(Color.theme.accent)
-               
+            
+            
             Text(coin.symbol.uppercased())
                 .font(.headline)
-                .padding(.leading, 6)
+                .padding(.leading, 6).foregroundColor(Color.theme.accent)
         }
     }
+    
 }
-

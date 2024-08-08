@@ -23,16 +23,16 @@ struct CircleButtonView: View {
 
 #Preview(traits: .sizeThatFitsLayout){
     Group {
-        CircleButtonView(iconName: "plus")
+        CircleButtonView(iconName: "info")
             .padding()
             .previewLayout(.sizeThatFits)
-            .frame(width: 100, height: 100) // Explicitly setting frame for preview
+          
         
         CircleButtonView(iconName: "plus")
             .padding()
             .previewLayout(.sizeThatFits)
-            .frame(width: 100, height: 100) // Explicitly setting frame for preview
-            .colorScheme(.dark)
+            
+            .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     }
 }
 
