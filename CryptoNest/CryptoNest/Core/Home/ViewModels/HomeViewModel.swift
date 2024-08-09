@@ -6,15 +6,27 @@
 //
 
 import Foundation
+import Combine
+
 class HomeViewModel :ObservableObject {
     @Published var AllCoins: [CoinModel] = []
     @Published var portfolioCoins: [CoinModel] = []
+    private let dataService = CoindDataServices()
+    private var cancallables = Set<AnyCancellable>()
+    
+    
     
     init ()  {
-        DispatchQueue.main.asyncAfter(deadline: .now()+2.0 ) {
-            self.AllCoins.append(DeveloperPreview.instance.coin)
-            self.portfolioCoins.append(DeveloperPreview.instance.coin)
-        }
+        addSubscribers()
+    }
+    
+    func addSubscribers(){
+        dataService.$allCoins
+            .sink {[weak self] (returnedCoins) in
+                self?.AllCoins = returnedCoins
+               
+            }
+            .store(in: &cancallables)
     }
     
 }
