@@ -17,6 +17,7 @@ struct HomeView: View {
                 .ignoresSafeArea()
             VStack {
                 homeHeader
+                SearchBarView(searchText: $vm.searchText)
                 columnTitles
                
                 if !showPortFolio{
@@ -44,10 +45,7 @@ struct HomeView_Preview : PreviewProvider {
 
 extension HomeView {
     private var homeHeader :some View{
-        
-        
-        
-        
+  
         HStack{
             CircleButtonView(iconName: showPortFolio ? "plus" : "info").animation(.none
             ).background(
@@ -66,9 +64,6 @@ extension HomeView {
             }
             
         }.padding(.horizontal)
-    
-        
-        
     }
     
     
