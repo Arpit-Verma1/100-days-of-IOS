@@ -20,6 +20,7 @@
 		8465816F2C63311500FABDF8 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465816E2C63311500FABDF8 /* Double.swift */; };
 		846581712C63314200FABDF8 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846581702C63314200FABDF8 /* PreviewProvider.swift */; };
 		846F0D012C65DD6F00FAE39E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F0D002C65DD6F00FAE39E /* NetworkManager.swift */; };
+		84ADC25E2C6B3EC300ED7F6E /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADC25D2C6B3EC300ED7F6E /* LocalFileManager.swift */; };
 		84C86C4D2C65C78800D2CA49 /* CoinDataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C86C4C2C65C78800D2CA49 /* CoinDataServices.swift */; };
 		84C86DA12C64804A005D33FC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C86DA02C64804A005D33FC /* HomeViewModel.swift */; };
 		84D641102C5F816B00079BF7 /* CryptoNestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6410F2C5F816B00079BF7 /* CryptoNestApp.swift */; };
@@ -41,6 +42,7 @@
 		8465816E2C63311500FABDF8 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		846581702C63314200FABDF8 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		846F0D002C65DD6F00FAE39E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		84ADC25D2C6B3EC300ED7F6E /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		84C86C4C2C65C78800D2CA49 /* CoinDataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataServices.swift; sourceTree = "<group>"; };
 		84C86DA02C64804A005D33FC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		84D6410C2C5F816B00079BF7 /* CryptoNest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoNest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				846F0D002C65DD6F00FAE39E /* NetworkManager.swift */,
+				84ADC25D2C6B3EC300ED7F6E /* LocalFileManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				84C86DA12C64804A005D33FC /* HomeViewModel.swift in Sources */,
 				840F04682C68E42A00559A3F /* CoinImageView.swift in Sources */,
 				84D641122C5F816B00079BF7 /* ContentView.swift in Sources */,
+				84ADC25E2C6B3EC300ED7F6E /* LocalFileManager.swift in Sources */,
 				846F0D012C65DD6F00FAE39E /* NetworkManager.swift in Sources */,
 				84139C5B2C5FA9E100802502 /* HomeView.swift in Sources */,
 				84C86C4D2C65C78800D2CA49 /* CoinDataServices.swift in Sources */,
