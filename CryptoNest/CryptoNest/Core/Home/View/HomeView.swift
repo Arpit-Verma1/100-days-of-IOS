@@ -15,8 +15,9 @@ struct HomeView: View {
         ZStack {
             Color.theme.background
                 .ignoresSafeArea()
-            VStack {
+            VStack {	
                 homeHeader
+                HomeStatsView(showPortfolio: $showPortFolio)
                 SearchBarView(searchText: $vm.searchText)
                 columnTitles
                
