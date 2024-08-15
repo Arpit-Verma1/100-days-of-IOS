@@ -27,4 +27,26 @@ extension Double {
     func asPercentString()->String{
         return asNumberString() + "%"
     }
+    
+    
+    func formattedWithAbbreviation() -> String {
+        let num = abs(Double(self))
+        let sign = (self < 0) ? "-" : ""
+        
+        switch num {
+        case 1_000_000_000...:
+            let formatted = num / 1_000_000_000
+            return sign + String(format: "%.2fB", formatted)
+        case 1_000_000...:
+            let formatted = num / 1_000_000
+            return sign + String(format: "%.2fM", formatted)
+        case 1_000...:
+            let formatted = num / 1_000
+            return sign + String(format: "%.2fK", formatted)
+        case 0...:
+            return self.asNumberString()
+        default:
+            return "\(sign)\(self)"
+        }
+    }
 }
