@@ -10,12 +10,15 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject private var vm: HomeViewModel
     @State private var showPortFolio: Bool = false
+    @State private var showPortfolioView: Bool = false
     
     var body: some View {
         ZStack {
             Color.theme.background
-                .ignoresSafeArea()
-            VStack {	
+                .ignoresSafeArea().sheet(isPresented: $showPortfolioView, content: {
+                    PortfolioView().environmentObject(vm)
+                })
+            VStack {
                 homeHeader
                 HomeStatsView(showPortfolio: $showPortFolio)
                 SearchBarView(searchText: $vm.searchText)
@@ -49,7 +52,12 @@ extension HomeView {
   
         HStack{
             CircleButtonView(iconName: showPortFolio ? "plus" : "info").animation(.none
-            ).background(
+            ).onTapGesture {
+                if showPortFolio {
+                    showPortfolioView.toggle()
+                }
+            }
+            .background(
                 CircleButtonAnimationView(animate: $showPortFolio)
             )
             Spacer()
