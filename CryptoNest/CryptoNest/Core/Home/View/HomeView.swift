@@ -23,7 +23,7 @@ struct HomeView: View {
                 HomeStatsView(showPortfolio: $showPortFolio)
                 SearchBarView(searchText: $vm.searchText)
                 columnTitles
-               
+                
                 if !showPortFolio{
                     allCoinsList.transition(.move(edge: .leading))
                 }
@@ -31,13 +31,13 @@ struct HomeView: View {
                 {
                     portfolioCoinsList.transition(.move(edge: .trailing))
                 }
-                    
-                    
-                    Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
-                }
+                
+                
+                Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
             }
         }
     }
+}
 struct HomeView_Preview : PreviewProvider {
     static var previews: some View {
         NavigationView {
@@ -49,7 +49,7 @@ struct HomeView_Preview : PreviewProvider {
 
 extension HomeView {
     private var homeHeader :some View{
-  
+        
         HStack{
             CircleButtonView(iconName: showPortFolio ? "plus" : "info").animation(.none
             ).onTapGesture {
@@ -99,6 +99,16 @@ extension HomeView {
             }
             Text("Price")
                 .frame(width: UIScreen.main.bounds.width / 3, alignment: .trailing)
+            Button(action :{
+                withAnimation(.linear(duration: 2)) {
+                    vm.reloadData()
+                }
+            },
+                   label: {
+                Image(systemName: "goforward")
+            }
+            ).rotationEffect(Angle(degrees: vm.isLoading ? 360 : 0),anchor: .center)
+            
         }.padding()
     }
 }
