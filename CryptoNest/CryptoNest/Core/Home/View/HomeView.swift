@@ -9,8 +9,11 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject private var vm: HomeViewModel
-    @State private var showPortFolio: Bool = false
+    @State private var showPortFolio: Bool = true
     @State private var showPortfolioView: Bool = false
+    
+    @State private var selectedCoin: CoinModel? = nil
+    @State private var showDetailView : Bool = false
     
     var body: some View {
         ZStack {
@@ -36,6 +39,11 @@ struct HomeView: View {
                 Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
             }
         }
+        .background(
+            NavigationLink(destination: DetailLoadingView(coin: $selectedCoin), isActive:$showDetailView, label: {
+                EmptyView()
+            })
+        )
     }
 }
 struct HomeView_Preview : PreviewProvider {
@@ -79,17 +87,35 @@ extension HomeView {
     private var allCoinsList : some  View {
         List {
             ForEach(vm.AllCoins) { coin in
-                CoinRowView(coin: coin, showHodingCoulumn: false).listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                CoinRowView(coin: coin, showHodingCoulumn: false)
+                    .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                    .onTapGesture {
+                        segue(coin: coin)
+                    }
+                
             }
         }.listStyle(PlainListStyle())
     }
+    
+    
     private var portfolioCoinsList : some  View {
         List {
             ForEach(vm.portfolioCoins) { coin in
-                CoinRowView(coin: coin, showHodingCoulumn: true).listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                CoinRowView(coin: coin, showHodingCoulumn: true)
+                    .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                    .onTapGesture {
+                        segue(coin: coin)
+                    }
             }
         }.listStyle(PlainListStyle())
     }
+    
+    private func segue(coin : CoinModel) {
+        selectedCoin = coin
+        showDetailView.toggle()
+    }
+    
+    
     private var columnTitles : some View {
         HStack {
             HStack{
@@ -97,13 +123,13 @@ extension HomeView {
                 Image(systemName : "chevron.down")
                     .opacity((vm.sortOption == .rank || vm.sortOption == .rankReversed) ? 1 : 0)
                     .rotationEffect(Angle(degrees: vm.sortOption == .rank ? 0 : 180))
-                    
+                
             }
             .onTapGesture {
                 withAnimation(.default) {
                     vm.sortOption = vm.sortOption == .rank ? .rankReversed : .rank
                 }
-               
+                
             }
             
             Spacer()
@@ -116,7 +142,7 @@ extension HomeView {
                     withAnimation(.default) {
                         vm.sortOption = vm.sortOption == .holdings ? .holdingsReversed : .holdingsReversed
                     }
-                   
+                    
                 }
                 
             }
@@ -129,7 +155,7 @@ extension HomeView {
                 withAnimation(.default) {
                     vm.sortOption = vm.sortOption == .price ? .priceReversed: .price
                 }
-               
+                
             }
             
             .frame(width: UIScreen.main.bounds.width / 3, alignment: .trailing)

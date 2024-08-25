@@ -62,8 +62,8 @@
             filePath = "CryptoNest/Core/Home/View/HomeView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "allCoinsList"
             landmarkType = "24">
          </BreakpointContent>
