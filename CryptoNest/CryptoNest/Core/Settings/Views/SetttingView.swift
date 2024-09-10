@@ -16,11 +16,15 @@ struct SettingView: View {
     
     var body: some View {
         NavigationView{
-            List{
-               aboutSection
-                coingeckoSection
-                developerSection
+            ZStack{
+                Color.theme.background.ignoresSafeArea()
+                List{
+                    aboutSection.listRowBackground(Color.theme.background.opacity(0.5))
+                    coingeckoSection.listRowBackground(Color.theme.background.opacity(0.5))
+                    developerSection.listRowBackground(Color.theme.background.opacity(0.5))
+                }
             }
+            
             .font(.headline)
             .accentColor(Color.theme.accent)
             .listStyle(GroupedListStyle())
