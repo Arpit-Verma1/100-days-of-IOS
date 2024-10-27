@@ -7,18 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		847B94AD2CCCF64F0093E54E /* ExtractSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B94AC2CCCF64F0093E54E /* ExtractSubview.swift */; };
+		847B94AF2CCCFB8F0093E54E /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B94AE2CCCFB8E0093E54E /* Binding.swift */; };
+		847B94B12CCD06070093E54E /* AnimationBootCamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B94B02CCD06070093E54E /* AnimationBootCamp.swift */; };
+		847B94B32CCD0EAD0093E54E /* SheetBootCamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847B94B22CCD0EAD0093E54E /* SheetBootCamp.swift */; };
 		84C8810A2CCBD32F0028193B /* ButtonsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C881092CCBD32F0028193B /* ButtonsApp.swift */; };
 		84C8810C2CCBD32F0028193B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8810B2CCBD32F0028193B /* ContentView.swift */; };
 		84C8810E2CCBD3340028193B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C8810D2CCBD3340028193B /* Assets.xcassets */; };
 		84C881112CCBD3340028193B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C881102CCBD3340028193B /* Preview Assets.xcassets */; };
+		84D733CB2CCCC897008D464F /* StateProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D733CA2CCCC897008D464F /* StateProperty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		847B94AC2CCCF64F0093E54E /* ExtractSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractSubview.swift; sourceTree = "<group>"; };
+		847B94AE2CCCFB8E0093E54E /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
+		847B94B02CCD06070093E54E /* AnimationBootCamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationBootCamp.swift; sourceTree = "<group>"; };
+		847B94B22CCD0EAD0093E54E /* SheetBootCamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetBootCamp.swift; sourceTree = "<group>"; };
 		84C881062CCBD32F0028193B /* Buttons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Buttons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C881092CCBD32F0028193B /* ButtonsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsApp.swift; sourceTree = "<group>"; };
 		84C8810B2CCBD32F0028193B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		84C8810D2CCBD3340028193B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84C881102CCBD3340028193B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		84D733CA2CCCC897008D464F /* StateProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateProperty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +62,14 @@
 			isa = PBXGroup;
 			children = (
 				84C881092CCBD32F0028193B /* ButtonsApp.swift */,
+				847B94AE2CCCFB8E0093E54E /* Binding.swift */,
+				84D733CA2CCCC897008D464F /* StateProperty.swift */,
 				84C8810B2CCBD32F0028193B /* ContentView.swift */,
 				84C8810D2CCBD3340028193B /* Assets.xcassets */,
 				84C8810F2CCBD3340028193B /* Preview Content */,
+				847B94AC2CCCF64F0093E54E /* ExtractSubview.swift */,
+				847B94B02CCD06070093E54E /* AnimationBootCamp.swift */,
+				847B94B22CCD0EAD0093E54E /* SheetBootCamp.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -138,7 +153,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C8810C2CCBD32F0028193B /* ContentView.swift in Sources */,
+				847B94B32CCD0EAD0093E54E /* SheetBootCamp.swift in Sources */,
 				84C8810A2CCBD32F0028193B /* ButtonsApp.swift in Sources */,
+				84D733CB2CCCC897008D464F /* StateProperty.swift in Sources */,
+				847B94B12CCD06070093E54E /* AnimationBootCamp.swift in Sources */,
+				847B94AD2CCCF64F0093E54E /* ExtractSubview.swift in Sources */,
+				847B94AF2CCCFB8F0093E54E /* Binding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
