@@ -19,18 +19,18 @@ struct popupBootCamp: View {
                 /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
             })
             
-            ///method 1
-            //        .sheet(isPresented: $showSheet, content: {
-            //            second()
-            //        })
+            //method 1
+//                    .sheet(isPresented: $showSheet, content: {
+//                        second()
+//                    })
             //method -2
-//            ZStack {
-//                if showSheet {
-//                    second(showsheet: $showSheet)
-//                        .padding(.top, 20)
-//                        .transition(.move(edge: .bottom))
-//                }
-//            }.zIndex(3)
+            ZStack {
+                if showSheet {
+                    second(showsheet: $showSheet)
+                        .padding(.top, 20)
+                        .transition(.move(edge: .bottom))
+                }
+            }.zIndex(3)
             
         }
     }

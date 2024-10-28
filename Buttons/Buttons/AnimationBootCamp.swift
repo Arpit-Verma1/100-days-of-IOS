@@ -25,6 +25,6 @@ struct AnimationBootCamp: View {
     }
 }
 
-#Preview {
+#Preview {  
     AnimationBootCamp()
 }
