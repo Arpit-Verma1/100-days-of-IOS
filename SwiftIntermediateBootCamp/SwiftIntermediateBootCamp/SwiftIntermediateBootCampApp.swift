@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct SwiftInterMediateBootCampApp: App {
+struct SwiftInterMediateBootCampApp: App {  
     var body: some Scene {
         WindowGroup {
-            DragGestureBootCamp()
+            NotificationBootCamp()
         }
     }
 }
