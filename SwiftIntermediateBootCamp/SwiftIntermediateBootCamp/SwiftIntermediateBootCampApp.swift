@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftInterMediateBootCampApp: App {  
     var body: some Scene {
         WindowGroup {
-            NotificationBootCamp()
+            GeometryReaderBootCamp()
         }
     }
 }
