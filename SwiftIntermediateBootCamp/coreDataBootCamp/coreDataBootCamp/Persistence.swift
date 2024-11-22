@@ -14,9 +14,9 @@ struct PersistenceController {
     static let preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+        for x in 0..<10 {
+            let newFruit = FruitEntity(context: viewContext)
+            newFruit.name = "Fruit \(x)"
         }
         do {
             try viewContext.save()
