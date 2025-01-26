@@ -67,6 +67,11 @@ final class AuthenticationManager{
         try   Auth.auth().signOut()
     }
     
+    func deleteUser () async throws {
+        guard let user = Auth.auth().currentUser else { throw  URLError(.badServerResponse)}
+        try await user.delete()
+    }
+    
 }
 
 // MARK : SIGN IN EMAIL

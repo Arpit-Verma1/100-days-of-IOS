@@ -12,28 +12,7 @@ import GoogleSignInSwift
 
 
 
-//The @MainActor ensures that code is executed on the main thread since UI updates must occur on the main thread in iOS/macOS applications.
-@MainActor
-final class AuthenticationViewModel : ObservableObject {
-    
-    
-    
-    
-    func signInWithGoogle() async throws {
-        let helper = SignInGoogleHelper()
-        let token = try await helper.signIn()
-        try await AuthenticationManager.shared.signInWithGoogle(tokens: token)
-       
-        
-    }
-    
-    func signInAnonmously() async throws {
-    
-        try await AuthenticationManager.shared.signInAnonmous( )
-       
-        
-    }
-}
+
 
 struct AuthenticationView: View {
     @Binding  var showSigninView :Bool
