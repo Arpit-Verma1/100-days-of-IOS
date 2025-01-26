@@ -13,16 +13,21 @@ final class SettingsViewModel : ObservableObject {
     
     
     @Published var authProviders: [AuthProviderOptions] = []
+    @Published var authUser : AuthDataResultModel? = nil
     
     func loadAuthProvider() {
         if let providers = try? AuthenticationManager.shared.getProvider(){
             authProviders = providers
         }
-            
+        
+    }
+    
+    func loadAuthenticateduser() {
+        self.authUser = try? AuthenticationManager.shared.getAuthenticatedUser()
     }
     
     func logOut() throws {
-       try AuthenticationManager.shared.signOut()
+        try AuthenticationManager.shared.signOut()
     }
     
     func resetPassword()async throws {
@@ -30,7 +35,7 @@ final class SettingsViewModel : ObservableObject {
         guard let email = authUser.email else {
             throw URLError(.fileDoesNotExist)
         }
-       try await  AuthenticationManager.shared.resetPassword(email: email)
+        try await  AuthenticationManager.shared.resetPassword(email: email)
     }
     
     func updatePassword () async throws {
@@ -43,6 +48,17 @@ final class SettingsViewModel : ObservableObject {
         try await  AuthenticationManager.shared.updateEmail(email: email)
     }
     
+    
+    func linkGoogle() async throws {
+        let helper = SignInGoogleHelper()
+        let token = try await helper.signIn()
+        self.authUser = try await AuthenticationManager.shared.signInWithGoogle(tokens: token)
+    }
+    func linkEmail() async throws {
+        let email = ""
+        let password = ""
+        self.authUser = try await AuthenticationManager.shared.linkEmail(email: email, password: password)
+    }
     
     
 }
@@ -67,11 +83,15 @@ struct SettingsView: View {
             if settingsViewModel.authProviders.contains(.email) {
                 emailSection
             }
+            if settingsViewModel.authUser?.anonmous == true {
+                anonymousSection
+            }
             
 
             
         }.onAppear{
             settingsViewModel.loadAuthProvider()
+            settingsViewModel.loadAuthenticateduser()
         } .navigationTitle("Settings")
        
     }
@@ -115,6 +135,37 @@ extension SettingsView {
             }
         } header: {
             Text("EMAIL FUNCTUIONS")
+        }
+    }
+    
+    
+    private var anonymousSection : some View {
+        Section {
+            Button ("Link Google" ) {
+                Task {
+                    do {
+                        
+                        try await settingsViewModel.linkGoogle()
+                        print("Google Linked")
+                    } catch {
+                        print("error: \(error)")
+                    }
+                }
+            }
+            Button ("Link Email" ) {
+                Task {
+                    do {
+                        
+                        try await settingsViewModel.linkEmail()
+                        print("Email Link")
+                    } catch {
+                        print("error: \(error)")
+                    }
+                }
+            }
+            
+        } header: {
+            Text("Create Account")
         }
     }
 }
