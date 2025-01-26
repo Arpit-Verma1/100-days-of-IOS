@@ -22,6 +22,11 @@ struct AuthDataResultModel{
     }
 }
 
+enum  AuthProviderOptions: String {
+    case email = "password"
+    case google =  "google.com"
+}
+
 final class AuthenticationManager{
     static let shared = AuthenticationManager()
     
@@ -33,7 +38,37 @@ final class AuthenticationManager{
         return AuthDataResultModel(user: user)
     }
     
+    func getProvider () throws ->[AuthProviderOptions]{
+        guard let providerData = Auth.auth().currentUser?.providerData else { throw URLError(.badServerResponse)
+            
+            
+        }
+        var providers : [AuthProviderOptions] = []
+        
+        for provider in providerData {
+            if let option =  AuthProviderOptions(rawValue : provider.providerID)
+                {
+                providers.append(option)
+            }
+            else {
+                assertionFailure("Provier Option not found : \(provider.providerID  )")
+            }
+        }
+        
+        return providers
+    }
     // use to tell we get value but can't be used in future
+    
+    
+    
+    func  signOut()  throws {
+        try   Auth.auth().signOut()
+    }
+    
+}
+
+// MARK : SIGN IN EMAIL
+extension AuthenticationManager {
     @discardableResult
     func createUser(email: String, password: String) async throws -> AuthDataResultModel{
         let authDataResult = try await FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password)
@@ -60,10 +95,23 @@ final class AuthenticationManager{
             guard let user = Auth.auth().currentUser else { throw  URLError(.badServerResponse)}
         try  await user.updateEmail(to: email)
     }
+}
+
+// MARK : SIGN IN WITH SSO
+extension AuthenticationManager {
     
-    
-    func  signOut()  throws {
-        try   Auth.auth().signOut()
+    @discardableResult
+    func signInWithGoogle(tokens:GoogleSignInResuls) async throws-> AuthDataResultModel{
+        
+        let credential = GoogleAuthProvider.credential(withIDToken: tokens.idToken , accessToken: tokens.accessToken)
+   
+        return try await signIN(credential: credential)
     }
+    
+    func signIN(credential :AuthCredential) async throws -> AuthDataResultModel{
+        let authDataResult = try await FirebaseAuth.Auth.auth().signIn(with: credential)
+        return AuthDataResultModel(user: authDataResult.user)
+    }
+    
     
 }
