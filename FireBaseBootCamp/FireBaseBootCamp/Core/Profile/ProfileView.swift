@@ -12,10 +12,24 @@ final class ProfileViewModel: ObservableObject {
     @Published private(set) var user: DBUser?   = nil
     func loadCurrentUser()async throws{
         let authResult  = try  AuthenticationManager.shared.getAuthenticatedUser()
-        self.user = try await  UserManager.shared.getUser(userId: authResult.uid)    }
+        
+        self.user = try await  UserManager.shared.getUser(userID: authResult.uid)   }
+    
+    
+    func togglePremiumStatus()async throws{
+        guard let user else {
+            return
+        }
+        let currentValue = user.isPremium ?? false
+        let updatedUser = user.togglePremiumStatus()
+        Task {
+            try await   UserManager.shared.updateUserPremiumStatus(user: updatedUser)
+            self.user = try await  UserManager.shared.getUser(userID: user.userId)
+        }
+    }
 }
 
-
+    
 
 struct ProfileView: View {
     
@@ -29,6 +43,14 @@ struct ProfileView: View {
                 if let isAnnonynousUser  = user.isAnonymous{
                     Text("isAnnonymous : \(isAnnonynousUser.description)")
                         .foregroundColor(.red)
+                }
+                
+                Button {
+                    Task {
+                       try await viewModel.togglePremiumStatus()
+                    }
+                } label : {
+                    Text ("User is premium: \((user.isPremium ??  false).description.capitalized)")
                 }
             }
         }

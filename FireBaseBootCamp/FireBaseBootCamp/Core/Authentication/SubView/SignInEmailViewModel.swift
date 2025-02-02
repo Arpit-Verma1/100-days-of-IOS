@@ -26,8 +26,9 @@ final class SignInEmailViewModel: ObservableObject {
         guard !email.isEmpty , !password.isEmpty else {
             print("No email or password found")
             return  }
-        let authResult = try await AuthenticationManager.shared.createUser(email: email, password: password)
-        try await UserManager.shared.createNewUser(auth: authResult)
+        let authResult = try await AuthenticationManager.shared.signInAnonmous( )
+        let user = DBUser(auth: authResult)
+        try await UserManager.shared.createNewUser(user: user   )
         }
     
     
