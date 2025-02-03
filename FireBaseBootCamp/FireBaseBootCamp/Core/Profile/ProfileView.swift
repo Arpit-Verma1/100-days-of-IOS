@@ -17,13 +17,14 @@ final class ProfileViewModel: ObservableObject {
     
     
     func togglePremiumStatus()async throws{
-        guard let user else {
+        guard var user else {
             return
         }
-        let currentValue = user.isPremium ?? false
-        let updatedUser = user.togglePremiumStatus()
+        let currentValue= user.isPremium ?? false
+        
+//        user.togglePremiumStatus();
         Task {
-            try await   UserManager.shared.updateUserPremiumStatus(user: updatedUser)
+            try await   UserManager.shared.updatePremiumStatus(userId: user.userId, isPremium: !currentValue)
             self.user = try await  UserManager.shared.getUser(userID: user.userId)
         }
     }
