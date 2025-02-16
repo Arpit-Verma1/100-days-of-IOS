@@ -111,7 +111,7 @@ struct ProfileView: View {
                             string in
                             Button (string) {
                                 if prefrencesIsSelected(text: string) {
-                                    viewModel.removeUserPrefrences(text: <#T##String#>)
+                                    viewModel.removeUserPrefrences(text: "")
                                 }
                                 else {
                                     viewModel.addUserPrefrences(text: string)
@@ -134,7 +134,7 @@ struct ProfileView: View {
                         viewModel.removeFavouriteMovie()
                     }
                 } label : {
-                    Text ("Favourite Moview: \(user.favoriteMovie ?? "")")
+                    Text ("Favourite Movie: \(user.favoriteMovie?.title ?? "No Movie")")
                 }
                 
                 
