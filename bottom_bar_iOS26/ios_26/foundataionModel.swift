@@ -15,45 +15,53 @@ struct foundataionModel: View {
     var body: some View {
         NavigationStack {
             
-                ScrollView(.vertical){
-                    Text(answer)
-                    
-                }
-                .safeAreaBar(edge: .bottom) {
-                    HStack(spacing: 20) {
-                        TextField("Prompt",text: $prompt)
-                    }
-                }
-        
-            
-                Button {
-                    Task {
-                        guard !prompt.isEmpty else {return}
-                        do {
+            ScrollView(.vertical){
+                Text(answer)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .multilineTextAlignment(.leading)
+                    .padding(15)
+                
+            }
+            .safeAreaBar(edge: .bottom) {
+                HStack(spacing: 20) {
+                    TextField("Prompt",text: $prompt)
+                        .padding(.horizontal,15)
+                        .padding(.vertical , 15)
+                        .glassEffect(.regular,in: .capsule)
+                    Button {
+                        Task {
+                            guard !prompt.isEmpty else {return}
+                            do {
                                 let session = LanguageModelSession()
                                 disableControls = true
                                 
-                                let response =  session.streamResponse(to: prompt)
+                                let response = session.streamResponse(to: prompt)
+                                print("resoinse us \(response)")
                                 for try await chunk in response  {
                                     self.answer = chunk
                                 }
                                 
                                 disableControls = true
-                            
+                                
+                            }
+                            catch {
+                                disableControls = true
+                                print("error is \(error.localizedDescription) ")
+                            }
                         }
-                        catch {
-                            disableControls = true
-                            print(error.localizedDescription)
-                        }
+                    } label: {
+                        Image(systemName: "paperplane.fill")
+                            .frame(width: 50, height: 50    )
                     }
-                } label: {
-                    Image(systemName: "paperplane.fill")
-                        .frame(width: 50, height: 50    )
-                }
-                .buttonStyle(.glass)
+                    .buttonStyle(.glass)
+                    
+                }.disabled(disableControls)
+                    .padding(15)
+            }.navigationTitle("foundatation models")
             
-        }.disabled(disableControls)
-            .padding(15)
+            
+        }
+        
     }
 }
 

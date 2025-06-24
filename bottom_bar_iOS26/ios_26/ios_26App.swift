@@ -11,7 +11,11 @@ import SwiftUI
 struct bottom_bar_iOS26App: App {
     var body: some Scene {
         WindowGroup {
-           LiquidGlassEffect()
+//           LiquidGlassEffect()
+//            foundataionModel()
+//            foundationModel2()
+//            richTextViewer()
+            webView()
         }
     }
 }
