@@ -15,7 +15,8 @@ struct bottom_bar_iOS26App: App {
 //            foundataionModel()
 //            foundationModel2()
 //            richTextViewer()
-            webView()
+//            webView()
+            ContentView()
         }
     }
 }

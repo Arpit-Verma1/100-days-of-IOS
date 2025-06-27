@@ -6,18 +6,32 @@
 //
 
 import SwiftUI
+import AppIntents
 
-struct AppIntents: View {
+struct ContentView: View {
     var body: some View {
-        LatteOrderView()
+      Text("Hey")
     }
 }
 
 #Preview {
-    AppIntents()
+    ContentView()
 }
 
+
+enum  LatteOrderPage : String  {
+    case page1 = "Updating Milk Percetage"
+    case page2 =  "Updatig Latte Ammount"
+    case page3 = "Order Finished"
+        
+}
+
+
 struct LatteOrderView: View  {
+    var count : Int
+    var milkPercentage : Int
+    var page : LatteOrderPage
+    var choice: LocalizedStringResource
     var body : some View  {
         VStack(alignment: .leading, spacing: 20) {
             HStack(spacing: 15) {
@@ -31,10 +45,22 @@ struct LatteOrderView: View  {
                         .fontWeight(.semibold)
                         .font(.title)
                     Group {
-                        Text("Large")
-                        Text(
-                            "20% Milk"
-                        )
+                        Text(choice)
+                        if page == .page2 {
+                            Text(
+                                "\(milkPercentage)% Milk"
+                            )
+                        }
+                        if page == .page3 {
+                            HStack {
+                                Text(
+                                    "\(milkPercentage)% Milk"
+                                )
+                                Text(
+                                    " | \(count)% Shots"
+                                )
+                            }
+                        }
                     }
                     .font(.callout)
                     .fontWeight(.medium)
@@ -44,9 +70,25 @@ struct LatteOrderView: View  {
                 .foregroundStyle(Color.white)
                 
                 
+                
+            }
+            
+            if page == .page3 {
+                Label("Order Placed", systemImage:"checkmark")
+                    .frame(height: 40)
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity)
+                    .background(.ultraThinMaterial, in:.capsule)
             }
             HStack(spacing: 8) {
-                Text("2 Shots")
+                Group {
+                    if page == .page2 {
+                        Text("\(count) shots")
+                    }
+                    if page == .page1 {
+                        Text("\(milkPercentage)% milk")
+                    }
+                }
                     .font(.title)
                     .fontWeight(.semibold)
                 Spacer()
@@ -65,9 +107,8 @@ struct LatteOrderView: View  {
     
     @ViewBuilder
     func ActionButton(_ isIncrement : Bool) -> some View  {
-        Button  {
-        
-        } label: {
+        Button (intent: LatteActionIntent(isUpdatingPercentage: page == .page1, isIncremental: isIncrement))
+    {
             Image(systemName:  isIncrement ? "plus" : "minus")
             
                 .font(.title2)
