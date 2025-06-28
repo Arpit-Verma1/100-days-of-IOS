@@ -6,9 +6,17 @@
 //
 
 import SwiftUI
+import AppIntents
 
 @main
 struct bottom_bar_iOS26App: App {
+    init() {
+        // Register dependencies for app intents
+//        AppDependencyManager.shared.add {
+//            ThaliComboManager()
+//        }
+    }
+    
     var body: some Scene {
         WindowGroup {
 //           LiquidGlassEffect()
