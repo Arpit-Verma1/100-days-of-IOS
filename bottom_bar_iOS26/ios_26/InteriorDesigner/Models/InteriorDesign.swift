@@ -32,7 +32,7 @@ enum RoomType: String, CaseIterable {
         case .office: return "desktopcomputer"
         case .diningRoom: return "fork.knife"
         case .bathroom: return "shower.fill"
-        case .nursery: return "baby.fill"
+        case .nursery: return "heart.fill"
         case .homeGym: return "dumbbell.fill"
         }
     }
@@ -100,7 +100,7 @@ enum LightingType: String, CaseIterable {
         switch self {
         case .natural: return "sun.max.fill"
         case .ambient: return "lightbulb.fill"
-        case .dramatic: return "spotlight"
+        case .dramatic: return "lightbulb.2.fill"
         case .task: return "lamp.table.fill"
         }
     }
@@ -231,5 +231,96 @@ extension AccessoryItem {
             return nil
         }
         self.init(id: id, name: name, type: type, placement: placement, price: price, styleNotes: styleNotes)
+    }
+}
+
+// MARK: - Generation Process Models
+struct GenerationStep: Identifiable {
+    let id = UUID()
+    let step: String
+    let message: String
+    let timestamp: Date
+    let type: StepType
+    var isCompleted: Bool = false
+    
+    enum StepType {
+        case thinking
+        case analyzing
+        case generating
+        case refining
+        case completed
+        
+        var icon: String {
+            switch self {
+            case .thinking: return "brain.head.profile"
+            case .analyzing: return "magnifyingglass"
+            case .generating: return "sparkles"
+            case .refining: return "paintbrush"
+            case .completed: return "checkmark.circle.fill"
+            }
+        }
+        
+        var color: Color {
+            switch self {
+            case .thinking: return .blue
+            case .analyzing: return .orange
+            case .generating: return .purple
+            case .refining: return .green
+            case .completed: return .green
+            }
+        }
+    }
+}
+
+struct ThinkingProcess {
+    var steps: [GenerationStep] = []
+    var currentStep: GenerationStep?
+    var isComplete: Bool = false
+    
+    mutating func addStep(_ step: GenerationStep) {
+        steps.append(step)
+        currentStep = step
+    }
+    
+    mutating func completeCurrentStep() {
+        if let index = steps.lastIndex(where: { $0.id == currentStep?.id }) {
+            steps[index].isCompleted = true
+        }
+    }
+}
+
+// MARK: - Terminal Log Models
+struct TerminalLog: Identifiable {
+    let id = UUID()
+    let message: String
+    let timestamp: Date
+    let level: LogLevel
+    
+    enum LogLevel {
+        case info
+        case thinking
+        case generating
+        case success
+        case error
+        
+        var prefix: String {
+            switch self {
+            case .info: return "ℹ️"
+            case .thinking: return "🧠"
+            case .generating: return "✨"
+            case .success: return "✅"
+            case .error: return "❌"
+            }
+        }
+        
+        var color: Color {
+            switch self {
+            case .info: return .blue
+            case .thinking: return .purple
+            case .generating: return .orange
+            case .success: return .green
+            case .error: return .red
+            }
+        }
     }
 }
