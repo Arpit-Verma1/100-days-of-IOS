@@ -4,6 +4,11 @@ A revolutionary FinTech app that combines traditional SIP (Systematic Investment
 
 ## ✨ Key Features
 
+
+https://github.com/user-attachments/assets/2ccc71f7-41c4-4310-9b76-005e3bb29090
+
+
+
 ### 🎯 **Goal Management**
 - Create and track multiple financial goals (House, Car, Education, Retirement, etc.)
 - Visual progress tracking with beautiful animated circular progress bars
