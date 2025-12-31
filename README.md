@@ -1,44 +1,86 @@
-# 100 Days of iOS
+# 🚀 SwiftUI Projects & 100 Days of iOS
 
-Welcome to my 100 Days of iOS repository! 🚀 Here, I document my journey as I explore iOS development using Swift and SwiftUI. This repository is a collection of my daily progress, where I aim to learn and implement new features, concepts, and libraries in iOS development.
+> A curated collection of **production-level SwiftUI applications**, UI systems, and architectural explorations — built over **1+ year of hands-on iOS development**.
 
-## About Me
-
-I'm Arpit Verma, passionate about mobile app development and currently diving deep into iOS with SwiftUI. My journey started with a curiosity for creating impactful mobile applications that solve real-world problems. Despite challenges, I'm dedicated to expanding my skills and sharing my learnings with the community.
-
-## Goal
-
-My goal with this 100-day challenge is to:
-- Master SwiftUI and iOS development techniques.
-- Build a portfolio of diverse iOS apps.
-- Share insights and code examples to inspire and educate others in the developer community.
-
-## Progress
-
-- **Already Viewed:** 411 times
-- **Cloned:** 18 times
-
-## Follow Me
-
-Follow my journey on LinkedIn: [Arpit Verma](https://www.linkedin.com/in/arpit-verma1/)
-
-## Star the Repo
-
-If you find my work interesting or helpful, please consider starring this repository!
-
-## Structure of the Repository
-
-### New Features Folder
-
-In this repository, the `NewFeatures` folder contains daily updates where each day's progress is documented. Each folder includes:
-- Code examples
-- Learnings
-- Challenges overcome
-
-Feel free to explore, provide feedback, or suggest improvements. Your support means a lot to me!
+⭐ **18+ Stars** · 🍴 **9+ Forks** · 👀 **~50 Daily Visitors**
 
 ---
 
-Let's connect, learn, and grow together! 🌟
+## 🔥 Featured Production Projects (Start Here)
 
-#100DaysOfiOS #SwiftUI #MobileAppDevelopment #iOSDevelopment
+> These are **complete, real-world apps** built after establishing strong SwiftUI fundamentals.  
+Each project includes a detailed README, architecture explanation, and a short demo video.
+
+
+| Project | Description | Tech Focus | Demo | Impressions | Likes | LinkedIn Post |
+|--------|-------------|-----------|------|-------------|-------|---------------|
+| **Nike E-Commerce** | Gesture-rich e-commerce UI with custom Path-based animations| SwiftUI, State, UX | ![LinkedIn Video GIF Jan 2026](https://github.com/user-attachments/assets/2a5129b4-8abb-4fef-92e0-2c36e1befba5)| 15.8k+ | 304+ | 🔗 https://linkly.link/2WCMJ |
+| **Retro Cars App** | Gesture-rich animated UI experience | SwiftUI, Animations | ![Screen Recording Dec 30 2025 from Convert to GIF project (1)](https://github.com/user-attachments/assets/d889bca9-dcbd-4830-86d9-293c2a39709a)| 10k+ | 100+ | 🔗 https://linkly.link/2WZPL |
+| **Ecom with Live Activity** | Use Live activity for rider animaation in notification | SwiftUI, Live Activities | ![LinkedIn Video Download GIF Jan 1 2026](https://github.com/user-attachments/assets/1c1255db-502b-412f-809f-5715612a83c4) | 30k+ | 420+ | 🔗 https://linkly.link/2KYyR |
+| **AI SIP Visualizer** | AI-assisted SIP planning & data visualization | SwiftUI, AI,Foundation Model | ![Change Video Speed Jan 1 2026](https://github.com/user-attachments/assets/d866ed2d-9afc-40b2-8dc3-c8b6721a5096) | 9.8k+ | 120+ | 🔗 https://linkly.link/2EUTC |
+| **AI Interior Designer** | Generate interior designs using AI | SwiftUI,Foundation Model | ![Screen Recording Jan 1 2026](https://github.com/user-attachments/assets/d210b40c-2b72-44bd-8eea-074969f0d967) | 25k+ | 150+ | 🔗 https://linkly.link/2DiMT|
+
+
+
+
+
+> *Impressions & likes are snapshot metrics representing real community engagement.*
+
+---
+
+## 📘 About This Repository
+
+This repository started as a **100 Days of SwiftUI challenge** to build strong fundamentals through daily practice.
+
+After ~50 days, I transitioned from isolated UI experiments to building **complete, production-style applications**, applying:
+
+- Clean architecture (MVVM)
+- Predictable state & data flow
+- Gesture-driven UX
+- Custom animations & interactions
+- macOS & iOS-specific UI patterns
+
+The repository intentionally contains **both**:
+- 🧱 Foundation-level SwiftUI explorations  
+- 🚀 Full-scale apps built on top of those foundations  
+
+This reflects a **realistic growth path** from fundamentals to production work.
+
+
+## 🧠 What This Repo Demonstrates
+
+- Consistency through daily practice  
+- Depth from UI components to complete apps  
+- Strong UX thinking before coding  
+- Ability to ship, document, and communicate work publicly  
+
+This repository represents **how I approach building products**, not just features.
+
+---
+
+## 👋 About Me
+
+I’m **Arpit Verma**, an iOS developer focused on building **user-centric SwiftUI applications**.
+
+I enjoy:
+- Breaking down complex gestures & animations
+- Designing predictable UI systems
+- Building clean, maintainable SwiftUI architectures
+
+🔗 **LinkedIn:** https://www.linkedin.com/in/arpit-verma  
+
+---
+
+## ⭐ Support the Work
+
+If this repository helped or inspired you:
+- ⭐ Star the repo  
+- 🍴 Fork it  
+- 💬 Share feedback or ideas  
+
+Your support keeps this journey going 🚀
+
+---
+
+### 📌 Tip
+Pin this repository on your GitHub profile — it’s already portfolio-ready.
