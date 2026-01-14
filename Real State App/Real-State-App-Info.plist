@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Helvetica Now Display Bold.ttf</string>
+		<string>Helvetica Now Display Medium.ttf</string>
+		<string>Tusker Grotesk Medium.ttf</string>
+		<string>SFPRODISPLAYMEDIUM.OTF</string>
+		<string>Europa Grotesk Medium Font.zip</string>
+		<string>europa-grotesk-medium.ttf</string>
+		<string>rolf.otf</string>
+		<string>RM Serifancy Regular.ttf</string>
+		<string>BBHSansHegarty-Regular.ttf</string>
+		<string>newston.otf</string>
+		<string> TuskerGrotesk-2800Super.ttf</string>
+		<string>PlaywriteDESAS-VariableFont_wght.ttf</string>
+		<string>TuskerGrotesk-1500Medium.ttf</string>
+		<string>capital.ttf</string>
+	</array>
+</dict>
+</plist>
