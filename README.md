@@ -2,7 +2,7 @@
 
 > A curated collection of **production-level SwiftUI applications**, UI systems, and architectural explorations — built over **1+ year of hands-on iOS development**.
 
-⭐ **18+ Stars** · 🍴 **9+ Forks** · 👀 **~50 Daily Visitors**
+⭐ **20+ Stars** · 🍴 **12+ Forks** · **~20+ Daily Clones** · 👀 **~50 Daily Visitors**
 
 ---
 
@@ -14,7 +14,7 @@ Each project includes a detailed README, architecture explanation, and a short d
 
 | Project  | Tech Focus | Demo | Impressions | Likes | LinkedIn Post |
 |----------|------------|------|-------------|-------|---------------|
-| **Real State App** | SwiftUI, State, UX | ![LinkedIn Video GIF Jan 2026](https://github.com/user-attachments/assets/23facca6-7950-4944-a312-5c44684db70a) | 15.8k+ | 304+ | 🔗 https://linkly.link/2WCMJ |
+| **Real State App** | SwiftUI, State, UX | ![LinkedIn Video GIF Jan 2026](https://github.com/user-attachments/assets/23facca6-7950-4944-a312-5c44684db70a) | 15.8k+ | 100+ | 🔗 https://linkly.link/2WCMJ |
 | **Nike E-Commerce** | SwiftUI, State, UX | ![LinkedIn Video GIF Jan 2026](https://github.com/user-attachments/assets/2a5129b4-8abb-4fef-92e0-2c36e1befba5) | 18.1k+ | 326+ | 🔗 https://linkly.link/2WCMJ |
 | **Retro Cars App**  | SwiftUI, Animations | ![Screen Recording Dec 30 2025 from Convert to GIF project (1)](https://github.com/user-attachments/assets/d889bca9-dcbd-4830-86d9-293c2a39709a)| 13.3k+ | 100+ | 🔗 https://linkly.link/2WZPL |
 | **Ecom with Live Activity**  | SwiftUI, Live Activities | ![LinkedIn Video Download GIF Jan 1 2026](https://github.com/user-attachments/assets/1c1255db-502b-412f-809f-5715612a83c4) | 30k+ | 420+ | 🔗 https://linkly.link/2KYyR |
