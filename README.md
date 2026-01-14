@@ -1,4 +1,4 @@
-![Screen Recording Jan 12 2026 GIF from Convert to GIF project](https://github.com/user-attachments/assets/7774b17b-878d-4b51-9d21-aa553460e37c)# 🚀 SwiftUI Projects & 100 Days of iOS
+# 🚀 SwiftUI Projects & 100 Days of iOS
 
 > A curated collection of **production-level SwiftUI applications**, UI systems, and architectural explorations — built over **1+ year of hands-on iOS development**.
 
