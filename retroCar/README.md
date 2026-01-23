@@ -4,7 +4,8 @@ A beautifully designed iOS app that takes users on a nostalgic journey through i
 
 ## ✨ Key Features
 
-https://github.com/user-attachments/assets/d889bca9-dcbd-4830-86d9-293c2a39709a
+https://github.com/user-attachments/assets/572d4464-d3d7-43ff-baee-469eedacdd52
+
 
 ### 🎯 **Decade-Based Car Browsing**
 - Interactive horizontal carousel showcasing cars from different eras
